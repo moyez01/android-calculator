@@ -1,0 +1,110 @@
+package com.example.moyezasus.calculationproject;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText first, secound;
+    TextView result;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+
+
+
+
+
+
+    public void Calculate(View view) {
+        double num1, num2, rslt;
+        int inrslt;
+
+        if(view.getId() == R.id.buttuom){
+            try{
+                num1 = Double.parseDouble(first.getText().toString());
+                num2 = Double.parseDouble(secound.getText().toString());
+                rslt = num1 + num2;
+                if(rslt % 1 == 0){
+                    inrslt = (int)rslt;
+                    result.setText(Integer.toString(inrslt));
+                }
+                else{
+                    result.setText(Double.toString(rslt));
+                }
+
+            }
+            catch (Exception e){
+                System.out.print(e);
+            }
+
+        }
+        if(view.getId() == R.id.button2){
+            try{
+                num1 = Double.parseDouble(first.getText().toString());
+                num2 = Double.parseDouble(secound.getText().toString());
+                rslt = num1 - num2;
+                if(rslt % 1 == 0){
+                    inrslt = (int)rslt;
+                    result.setText(Integer.toString(inrslt));
+                }
+                else{
+                    result.setText(Double.toString(rslt));
+                }
+
+
+            }
+            catch (Exception e){
+                System.out.print(e);
+            }
+        }
+        if(view.getId() == R.id.button3){
+            try{
+                num1 = Double.parseDouble(first.getText().toString());
+                num2 = Double.parseDouble(secound.getText().toString());
+                rslt = num1 * num2;
+                if(rslt % 1 == 0){
+                    inrslt = (int)rslt;
+                    result.setText(Integer.toString(inrslt));
+                }
+                else{
+                    result.setText(Double.toString(rslt));
+                }
+
+            }
+            catch (Exception e){
+                System.out.print(e);
+            }
+        }
+        if(view.getId() == R.id.button4){
+            try{
+                num1 = Double.parseDouble(first.getText().toString());
+                num2 = Double.parseDouble(secound.getText().toString());
+                try{
+                    rslt = num1 / num2;
+                    if(rslt % 1 == 0){
+                        inrslt = (int)rslt;
+                        result.setText(Integer.toString(inrslt));
+                    }
+                    else{
+                        result.setText(Double.toString(rslt));
+                    }
+
+                }
+                catch (Exception e){
+                    System.out.print(e);
+                }
+            }
+            catch (Exception e){
+                System.out.print(e);
+            }
+        }
+    }
+}
+
